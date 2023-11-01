@@ -11,6 +11,7 @@ import {
   sortByParams,
   sortDataByInput,
 } from './utils/handleSort';
+import Search from './components/Search';
 
 const reducer = (state: PaginationState, action: PaginationAction) => {
   const { type, payload } = action;
@@ -74,7 +75,11 @@ function App() {
     handleData(false);
   }, []);
   console.log(data);
-  return <></>;
+  return (
+    <div>
+      <Search handleData={handleData}></Search>
+    </div>
+  );
 }
 
 export default App;

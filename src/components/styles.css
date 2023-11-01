@@ -1,0 +1,212 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInput {
+  border: 1px solid #ccc;
+  -webkit-box-shadow:
+    0 1px 1px #ddd inset,
+    0 1px 0 #fff;
+  -moz-box-shadow:
+    0 1px 1px #ddd inset,
+    0 1px 0 #fff;
+  box-shadow:
+    0 1px 1px #ddd inset,
+    0 1px 0 #fff;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #999;
+  float: left;
+  font:
+    16px Lucida Sans,
+    Trebuchet MS,
+    Tahoma,
+    sans-serif;
+  height: 20px;
+  padding: 10px;
+  margin-right: 5%;
+  width: 70%;
+}
+.searchInput:focus {
+  border-color: #aaa;
+  -webkit-box-shadow: 0 1px 1px #bbb inset;
+  -moz-box-shadow: 0 1px 1px #bbb inset;
+  box-shadow: 0 1px 1px #bbb inset;
+  outline: 0;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f6f6f6),
+    to(#eae8e8)
+  );
+  background-image: -webkit-linear-gradient(top, #f6f6f6, #eae8e8);
+  background-image: -moz-linear-gradient(top, #f6f6f6, #eae8e8);
+  background-image: -ms-linear-gradient(top, #f6f6f6, #eae8e8);
+  background-image: -o-linear-gradient(top, #f6f6f6, #eae8e8);
+  background-image: linear-gradient(top, #f6f6f6, #eae8e8);
+  border-color: #dedede #bababa #aaa #bababa;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow:
+    0 3px 3px rgba(255, 255, 255, 0.1),
+    0 3px 0 #bbb,
+    0 4px 0 #aaa,
+    0 5px 5px #444;
+  -moz-box-shadow:
+    0 3px 3px rgba(255, 255, 255, 0.1),
+    0 3px 0 #bbb,
+    0 4px 0 #aaa,
+    0 5px 5px #444;
+  box-shadow:
+    0 3px 3px rgba(255, 255, 255, 0.1),
+    0 3px 0 #bbb,
+    0 4px 0 #aaa,
+    0 5px 5px #444;
+  margin: 10px auto;
+  overflow: hidden;
+  padding: 8px;
+  width: 30%;
+}
+
+@media screen and (max-width: 600px) {
+  .searchWrapper {
+    flex-direction: column;
+  }
+  .searchButton {
+    margin-top: 5px;
+  }
+  .searchInput {
+    width: 80%;
+    margin-right: 0;
+  }
+}
+
+.searchButton {
+  background-color: #0483a0;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#31b2c3),
+    to(#0483a0)
+  );
+  background-image: -webkit-linear-gradient(top, #31b2c3, #0483a0);
+  background-image: -moz-linear-gradient(top, #31b2c3, #0483a0);
+  background-image: -ms-linear-gradient(top, #31b2c3, #0483a0);
+  background-image: -o-linear-gradient(top, #31b2c3, #0483a0);
+  background-image: linear-gradient(top, #31b2c3, #0483a0);
+  border: 1px solid #00748f;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 1px 0 #fff;
+  -moz-box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 1px 0 #fff;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3) inset,
+    0 1px 0 #fff;
+  color: #fafafa;
+  cursor: pointer;
+  height: 42px;
+  float: right;
+  font: Arial, Helvetica;
+  padding: 0;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+
+.listWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.dataWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 10px;
+}
+
+.pokemonCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: lightgray;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  width: 30%;
+  margin-top: 20px;
+}
+
+/* .paginationWrapper {
+  display: flex;
+  justify-content: center;
+} */
+
+.paginationNumber {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.footerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pagination a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
