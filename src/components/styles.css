@@ -133,10 +133,10 @@
 }
 
 .listWrapper {
-  display: flex;
+  display: grid;
   align-items: center;
+  grid-template-columns: 2fr 1fr;
   justify-content: center;
-  flex-direction: row;
   margin-top: 20px;
   margin-bottom: 20px;
 }

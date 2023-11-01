@@ -20,6 +20,8 @@ export interface PaginationState {
 export enum PaginationActionKind {
   newSearch = 'newSearch',
   changePageCount = 'changePageCount',
+  changeSelectedPage = 'changeSelectedPage',
+  changeOffSet = 'changeOffSet',
 }
 
 export interface PaginationAction {

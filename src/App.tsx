@@ -13,6 +13,7 @@ import {
 } from './utils/handleSort';
 import Search from './components/Search';
 import SearchList from './components/SearchList';
+import Pagination from './components/Pagination';
 
 const reducer = (state: PaginationState, action: PaginationAction) => {
   const { type, payload } = action;
@@ -30,6 +31,16 @@ const reducer = (state: PaginationState, action: PaginationAction) => {
       };
     default:
       return state;
+    case PaginationActionKind.changeSelectedPage:
+      return {
+        ...state,
+        currentPage: payload,
+      };
+    case PaginationActionKind.changeOffSet:
+      return {
+        ...state,
+        offset: payload,
+      };
   }
 };
 
@@ -72,14 +83,41 @@ function App() {
         });
       });
   };
+
+  const handlePageClick = (pageNumber: number) => {
+    const selectedPage = pageNumber;
+    const offset = selectedPage * pagination.perPage;
+    // this.setState(
+    //   {
+    //     currentPage: selectedPage,
+    //     offset,
+    //   },
+    //   () => {
+    //     handleData(false);
+    //   }
+    // );
+    dispatch({
+      type: PaginationActionKind.changeOffSet,
+      payload: offset,
+    });
+    dispatch({
+      type: PaginationActionKind.changeSelectedPage,
+      payload: selectedPage,
+    });
+  };
+
   useEffect(() => {
     handleData(false);
-  }, []);
-  console.log(data);
+  }, [handlePageClick]);
+
   return (
     <div>
       <Search handleData={handleData}></Search>
       <SearchList data={data}></SearchList>
+      <Pagination
+        pageCount={pagination.pageCount}
+        handleClick={handlePageClick}
+      />
     </div>
   );
 }
