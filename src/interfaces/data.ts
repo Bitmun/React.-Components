@@ -9,3 +9,20 @@ export interface Data {
   name: string;
   url: string;
 }
+
+export interface PaginationState {
+  offset: number;
+  perPage: number;
+  currentPage: number;
+  pageCount: number;
+}
+
+export enum PaginationActionKind {
+  newSearch = 'newSearch',
+  changePageCount = 'changePageCount',
+}
+
+export interface PaginationAction {
+  type: PaginationActionKind;
+  payload: number;
+}
